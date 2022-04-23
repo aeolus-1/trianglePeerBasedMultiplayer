@@ -18,13 +18,15 @@ channel.subscribe("gamePlayers", (message) => {
   onlinePlayers[dat.id] = {}
 
     onlinePlayers[dat.id].position = dat.position
+  onlinePlayers[dat.id].angle = dat.angle
 
 });
 
 function broadcastData() {
     channel.publish("gamePlayers", JSON.stringify({
         id:onlineId,
-        position:{...entitys[0].body.position}
+        position:{...entitys[0].body.position},
+        angle:entitys[0].body.angle
     }))
 }
 
