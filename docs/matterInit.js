@@ -178,9 +178,9 @@ Matter.Events.on(render, "afterRender", function() {
     for (let i = 0; i < Object.keys(onlinePlayers).length; i++) {
         const player = onlinePlayers[Object.keys(onlinePlayers)[i]];
         render.context.save()
-      render.context.translate(player.position.x-15, player.position.y-15)
+      render.context.translate(player.position.x, player.position.y)
       render.context.rotate(player.angle)
-      render.context.translate(-(player.position.x-15), -(player.position.y-15))
+      render.context.translate(-(player.position.x), -(player.position.y))
         render.context.fillRect(player.position.x-15, player.position.y-15, 30, 30)
         
     }
