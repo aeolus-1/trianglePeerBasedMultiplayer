@@ -181,7 +181,9 @@ Matter.Events.on(render, "afterRender", function() {
       render.context.translate(player.position.x, player.position.y)
       render.context.rotate(player.angle)
       render.context.translate(-(player.position.x), -(player.position.y))
+      render.context.fillStyle = colorTheme.player
         render.context.fillRect(player.position.x-15, player.position.y-15, 30, 30)
+      render.context.restore()
         
     }
 
