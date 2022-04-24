@@ -110,6 +110,8 @@ Matter.Events.on(runner, "beforeUpdate", function () {
 
   if (keys["|"]) nith = true
 
+  
+
 });
 var camera = v(0,0)
 Matter.Events.on(render, "beforeRender", function() {
@@ -175,17 +177,7 @@ Matter.Events.on(render, "afterRender", function() {
 
     render.context.drawImage(img, endPos.x, endPos.y)
 
-    for (let i = 0; i < Object.keys(onlinePlayers).length; i++) {
-        const player = onlinePlayers[Object.keys(onlinePlayers)[i]];
-        render.context.save()
-      render.context.translate(player.position.x, player.position.y)
-      render.context.rotate(player.angle)
-      render.context.translate(-(player.position.x), -(player.position.y))
-      render.context.fillStyle = colorTheme.player
-        render.context.fillRect(player.position.x-15, player.position.y-15, 30, 30)
-      render.context.restore()
-        
-    }
+    
 
     if (getDst(entitys[0].body.position, endPos) < 400 && timeStamp > 0) {
         timeStamp = -timeStamp
